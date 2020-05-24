@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Сливочое с апельсиновым джемом и цитрусовой стружкой",
+    "type": "cream",
+    "fat": "45",
+    "price": "380",
+    "photo": "orange.jpg"
+  },
+  {
+    "name": "Сливочно-кофейное с кусочками шоколада",
+    "type": "choco",
+    "fat": "50",
+    "price": "355",
+    "photo": "coffee.jpg"
+  },
+  {
+    "name": "Сливочно-клубничное с присыпкой из белого шоколада",
+    "type": "cream",
+    "fat": "30",
+    "price": "415",
+    "photo": "strawberry.jpg"
+  },
+  {
+    "name": "Сливочное крем-брюле с карамельной подливкой",
+    "type": "cream",
+    "fat": "55",
+    "price": "325",
+    "photo": "creme-brulee.jpg"
+  },
+  {
+    "name": "Сливочное с брусничным джемом",
+    "type": "fruit",
+    "fat": "46",
+    "price": "410",
+    "photo": "cowberry.jpg"
+  },
+  {
+    "name": "Сливочно-черничное с цельными ягодами черники",
+    "type": "fruit",
+    "fat": "25",
+    "price": "375",
+    "photo": "blueberry.jpg"
+  },
+  {
+    "name": "Сливочно-лимонное с карамельной присыпкой",
+    "type": "fruit",
+    "fat": "10",
+    "price": "320",
+    "photo": "lemon.jpg"
+  },
+  {
+    "name": "Сливочное с шоколадной стружкой",
+    "type": "choco",
+    "fat": "65",
+    "price": "440",
+    "photo": "chocoshavings.jpg"
+  },
+  {
+    "name": "Сливочно-ванильное с кусочками шоколада",
+    "type": "choco",
+    "fat": "18",
+    "price": "435",
+    "photo": "vanilla-chocolate.jpg"
+  },
+  {
+    "name": "Сливочное с ментоловым сиропом",
+    "type": "mint",
+    "fat": "45",
+    "price": "355",
+    "photo": "mentol.jpg"
+  },
+  {
+    "name": "Сливочное с кусочками черного шоколада",
+    "type": "choco",
+    "fat": "55",
+    "price": "355",
+    "photo": "chocopieces.jpg"
+  },
+  {
+    "name": "Сливочное с мятным сиропом",
+    "type": "mint",
+    "fat": "0",
+    "price": "420",
+    "photo": "mintsirup.jpg"
+  }
+]
