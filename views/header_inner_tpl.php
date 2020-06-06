@@ -27,6 +27,7 @@
 					</li>
 					<li class="catalog-navigation-item-inner"><a href="#">Доставка и оплата</a></li>
 					<li class="catalog-navigation-item-inner"><a href="#">О Компании</a></li>
+                    {admin}
 				</ul>
 			</nav>
 			<nav class="user-navigation-general">

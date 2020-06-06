@@ -3,11 +3,18 @@ include_once "../config/connect.php";
 if(!isset($_SESSION))
 	session_start();
 
-function add_archive_to_cart($pdo)
+function add_archive_to_cart($link)
 {
-	$sql = $pdo->prepare("SELECT * FROM archive WHERE user_email = ?");
-	$sql->execute(array($_SESSION['user']));
-	$archive = $sql->fetchAll();
+	$sql = "SELECT * FROM archive WHERE user_email = ?";
+	if($stmt = mysqli_prepare($link, $sql)){
+		mysqli_stmt_bind_param($stmt,'s', $_SESSION['user']);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+		$archive = mysqli_fetch_all($result, MYSQLI_ASSOC);
+		mysqli_stmt_close($stmt);
+	} else{
+		echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+	}
 	foreach ($archive as $item)
 	{
 		$i = 1;
@@ -31,9 +38,6 @@ function add_archive_to_cart($pdo)
 			$i = 1;
 			$counter = 0;
 		}
-
-
-
 		if ($i == $counter +1) {
 			$new_row = [];
 			$new_row['id'] = $item['product_id'];
@@ -45,59 +49,90 @@ function add_archive_to_cart($pdo)
 	}
 }
 
-function add_cart_to_archive($pdo)
+function add_cart_to_archive($link)
 {
-	$sql = $pdo->prepare("SELECT COUNT(*) FROM archive WHERE user_email = ?");
-	$sql->execute(array($_SESSION['user']));
-	$is_user_have_archive = $sql->fetch()['COUNT(*)'];
-	if($is_user_have_archive == 0)
+	$sql = "SELECT COUNT(*) as cnt FROM archive WHERE user_email = ?";
+	if($stmt = mysqli_prepare($link, $sql)){
+		mysqli_stmt_bind_param($stmt,'s', $_SESSION['user']);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+		$is_user_have_archive = mysqli_fetch_assoc($result);
+		mysqli_stmt_close($stmt);
+	} else{
+		echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+	}
+	if($is_user_have_archive['cnt'] == 0)
 	{
+		$sql = "INSERT INTO archive(product_id, user_email,quan) VALUES(?,?,?)";
 		foreach ($_SESSION['order'] as $item)
 		{
-			$sql = $pdo->prepare("INSERT INTO archive(product_id, user_email,quan) VALUES(?,?,?)");
-			$sql->execute(array($item['id'], $_SESSION['user'], $item['quan']));
+			if($stmt = mysqli_prepare($link, $sql)){
+				mysqli_stmt_bind_param($stmt,'isi', $item['id'], $_SESSION['user'], $item['quan']);
+				mysqli_stmt_execute($stmt);
+				mysqli_stmt_close($stmt);
+			} else{
+				echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+			}
 		}
 	}
 }
 
-function clean_archive($pdo)
+function clean_archive($link)
 {
-	$sql = $pdo->prepare("DELETE FROM archive WHERE user_email = ?");
-	$sql->execute(array($_SESSION['user']));
+	$sql = "DELETE FROM archive WHERE user_email = ?";
+	if($stmt = mysqli_prepare($link, $sql)){
+		mysqli_stmt_bind_param($stmt,'s', $_SESSION['user']);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	} else{
+		echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+	}
 }
 
-function delete_item_from_archive($pdo)
+function delete_item_from_archive($link)
 {
-	$sql = $pdo->prepare("DELETE FROM archive WHERE user_email = ? AND product_id = ?");
-	$sql->execute(array($_SESSION['user'], $_GET['id']));
+	$sql ="DELETE FROM archive WHERE user_email = ? AND product_id = ?";
+	if($stmt = mysqli_prepare($link, $sql)){
+		mysqli_stmt_bind_param($stmt,'si', $_SESSION['user'], $_GET['id']);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	} else{
+		echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+	}
 }
 
-function change_order_status($pdo)
+function change_order_status($link)
 {
-	$sql = $pdo->prepare("UPDATE orders SET status = ? WHERE id =?");
-	$sql->execute(array($_POST['status'], $_POST['id']));
+	$sql = "UPDATE orders SET status = ? WHERE id =?";
+	if($stmt = mysqli_prepare($link, $sql)){
+		mysqli_stmt_bind_param($stmt,'si', $_POST['status'], $_POST['id']);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	} else{
+		echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+	}
 }
 
 if(isset($_GET) && isset($_GET['act']))
 {
-	$pdo = connect_to_database();
+	$link = connect_to_database();
 	switch ($_GET['act'])
 	{
 		case "add":
-			add_archive_to_cart($pdo);
+			add_archive_to_cart($link);
 			break;
 		case "clean":
-			clean_archive($pdo);
+			clean_archive($link);
 			break;
 		case "archive":
-			add_cart_to_archive($pdo);
+			add_cart_to_archive($link);
 			break;
 		case "delitem":
-			delete_item_from_archive($pdo);
+			delete_item_from_archive($link);
 			break;
 		case "change_status":
-			change_order_status($pdo);
+			change_order_status($link);
 	}
-	$pdo = null;
+	$link = null;
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 }

@@ -9,5 +9,7 @@ if(isset($_SESSION) && isset($_SESSION['user']))
 	if(isset($_SESSION['order']))
 		$_SESSION['order'] = NULL;
 }
-
-header("Location: ".$_SERVER['HTTP_REFERER']);
+if ($_SERVER['HTTP_REFERER'] == "cart.php" || $_SERVER['HTTP_REFERER'] == "admin.php")
+	header("Location: index.php");
+else
+	header("Location: ".$_SERVER['HTTP_REFERER']);

@@ -17,10 +17,7 @@
         </ul>
     </section>
     <div class="copyright">
-        <a href="https://htmlacademy.ru/intensive/htmlcss">
-            <img src="../views/img/logo-name.svg" alt="HTML-Academy" height="39" width="108">
-        </a>
-        <a href="https://htmlacademy.ru/intensive/htmlcss">Сделано в <span>HTML Academy</span> © 2017</a>
+        <img src="../views/img/header-logo.svg" alt="Логотип магазина" width="154" height="64">
     </div>
 </footer>
 </div>

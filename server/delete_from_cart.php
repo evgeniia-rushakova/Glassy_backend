@@ -18,21 +18,36 @@ function	delete_from_cart()
 
 function create_order()
 {
-	$number = random_int(100, 999);
-	$pdo = connect_to_database();
-	$sql = $pdo->prepare("INSERT INTO orders(user_email, order_number, status) values(?,?,?)");
-	$sql->execute(array($_SESSION['user'], $number, "Принят в обработку"));
-	$id = $pdo->lastInsertId();
+	try {
+		$number = random_int(100, 999);
+	} catch (Exception $e) {
+	}
+	$link = connect_to_database();
+	$sql = "INSERT INTO orders(user_email, order_number, status) values(?,?,?)";
+	if($stmt = mysqli_prepare($link, $sql)){
+		$status = "Принят в обработку";
+		mysqli_stmt_bind_param($stmt,'sis', $_SESSION['user'], $number, $status);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	} else{
+		echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+	}
+	$id = mysqli_insert_id($link);
 	if(isset($_SESSION['offer']))
 		$offer = $_SESSION['offer'];
 	else
 		$offer = NULL;
 	foreach ($_SESSION['order'] as $item)
 	{
-		$sqlin = $pdo->prepare("INSERT INTO order_positions(order_id, product_id, quan, offer) VALUES (?,?,?,?)");
-		$sqlin->execute(array($id, $item['id'], $item['quan'], $offer));
+		$sql = "INSERT INTO order_positions(order_id, product_id, quan, offer) VALUES (?,?,?,?)";
+		if($stmt = mysqli_prepare($link, $sql)){
+			mysqli_stmt_bind_param($stmt,'iiis', $id, $item['id'], $item['quan'], $offer);
+			mysqli_stmt_execute($stmt);
+			mysqli_stmt_close($stmt);
+		} else{
+			echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+		}
 	}
-
 	return $number;
 }
 
@@ -43,7 +58,6 @@ else if(isset($_GET['act']) && ($_GET['act'] == 'delete' || $_GET['act'] == 'buy
 	$need_alert = false;
 	if ($_GET['act'] == 'buy')
 	{
-
 		$need_alert =create_order();
 	}
 	if(isset($_SESSION['order']))
@@ -55,7 +69,6 @@ else if(isset($_GET['act']) && ($_GET['act'] == 'delete' || $_GET['act'] == 'buy
 		while($keys[$i] && $keys[$i] != 'offer')
 			$i++;
 		array_splice($_SESSION, $i, 1);
-		//array_splice($_SESSION['offer'],0, 1);
 	}
 
 	if($need_alert == false)

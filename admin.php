@@ -10,7 +10,7 @@ if(isset($_SESSION['user'])&& $_SESSION['user'] == "admin@admin")
 	else
 		$inout = "<li class=\"user-navigation-item login-hover\"><a class=\"login-link\" href=\"server/logout.php\">Выход</a></li>";
 	$cart = generate_cart();
-	$title = "Admins Page";
+	$title = "Admins Page:orders";
 	$content = generate_orders_to_admin();
 	$file = file_get_contents("views/admin_tpl.php");
 	$header = file_get_contents("views/header_inner_tpl.php");
@@ -21,6 +21,18 @@ if(isset($_SESSION['user'])&& $_SESSION['user'] == "admin@admin")
 	$file = str_replace('{cart}', $cart, $file);
 	$file = str_replace('{content}', $content, $file);
 	$file = str_replace('{footer}', $footer, $file);
+	$admin_tpl = "					<li class=\"active catalog-navigation-item-inner current-page\">
+						<a href=\"admin.php\">ADMIN</a>
+						<ul class=\"catalog-navigation\">
+							<li class=\"catalog-navigation-item-submenu\"><a href=\"admin.php\">Заказы</a></li>
+							<li class=\"catalog-navigation-item-submenu\"><a href=\"add_item.php\">Добавить товар</a></li>
+							<li class=\"catalog-navigation-item-submenu\"><a href=\"users.php\">Пользователи</a></li>
+						</ul>
+					</li>";
+		if($_SESSION['user'] == "admin@admin")
+		$file = str_replace('{admin}',$admin_tpl , $file);
+	else
+		$file = str_replace('{admin}', "", $file);
 	print($file);
 }
 else

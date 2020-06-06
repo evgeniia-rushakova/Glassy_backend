@@ -21,4 +21,16 @@ $file = str_replace('{in-out}', $inout, $file);
 $file = str_replace('{cart}', $cart, $file);
 $file = str_replace('{products}', $products, $file);
 $file = str_replace('{footer}', $footer, $file);
+$admin_tpl = "					<li class=\"active catalog-navigation-item-inner current-page\">
+						<a href=\"admin.php\">ADMIN</a>
+						<ul class=\"catalog-navigation\">
+							<li class=\"catalog-navigation-item-submenu\"><a href=\"admin.php\">Заказы</a></li>
+							<li class=\"catalog-navigation-item-submenu\"><a href=\"add_item.php\">Добавить товар</a></li>
+							<li class=\"catalog-navigation-item-submenu\"><a href=\"users.php\">Пользователи</a></li>
+						</ul>
+					</li>";
+if($_SESSION['user'] == "admin@admin")
+	$file = str_replace('{admin}',$admin_tpl , $file);
+else
+	$file = str_replace('{admin}', "", $file);
 print($file);

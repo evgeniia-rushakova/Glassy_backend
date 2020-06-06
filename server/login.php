@@ -2,11 +2,18 @@
 include_once "../config/connect.php";
 function login_user()
 {
-	$pdo = connect_to_database();
-	$pass = password_hash($_POST['pass'], PASSWORD_BCRYPT);
-	$sql = $pdo->prepare("SELECT * FROM users WHERE email = ?");
-	$sql->execute(array($_POST['email']));
-	$res = $sql->fetch();
+	$link = connect_to_database();
+
+	$sql = "SELECT * FROM users WHERE email = ?";
+	if($stmt = mysqli_prepare($link, $sql)){
+		mysqli_stmt_bind_param($stmt,'s', $_POST['email']);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+		$res = mysqli_fetch_assoc($result);
+		mysqli_stmt_close($stmt);
+	} else{
+		echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+	}
 	if (password_verify($_POST['password'], $res['password']))
 	{
 		if (!isset($_SESSION))

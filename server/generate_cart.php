@@ -5,10 +5,15 @@ if (!isset($_SESSION))
 
 function generate_item_in_cart()
 {
-	$pdo = connect_to_database();
-	$sql = $pdo->prepare("SELECT * FROM products");
-	$sql->execute();
-	$products = $sql->fetchAll();
+	$link = connect_to_database();
+	$sql = "SELECT * FROM products";
+	if($result = mysqli_query($link, $sql)){
+		$products = mysqli_fetch_all($result,MYSQLI_ASSOC);
+		mysqli_free_result($result);
+		mysqli_close($link);
+	}
+	else
+		echo "No records matching your query were found.";
 	$items = "";
 	$info = array();
 	$amount = 0;
@@ -19,8 +24,10 @@ function generate_item_in_cart()
 		{
 			$template = file_get_contents("views/item_in_cart.php");
 			$i = 0;
-			while ($item['id'] != $products[$i]['id'])
+			while ($i < count($products) && $item['id'] != $products[$i]['id'])
 				$i++;
+			if ($i == count($products))
+				break;
 			$template = str_replace('{img}',"views/img/" . $products[$i]['photo'], $template);
 			$template = str_replace('{name}', $products[$i]['name'], $template);
 			$template = str_replace('{id}', $products[$i]['id'], $template);
@@ -114,10 +121,17 @@ function generate_archive()
 		<div class=\"buttons\">
 		<a href=\"../server/archive.php?act=add\" class=\"button button-chocolate\">Добавить в текущий заказ</a>
 		<a href=\"../server/archive.php?act=clean\" class=\"button button-chocolate\">Очистить архив</a></div>";
-	$pdo = connect_to_database();
-	$sql = $pdo->prepare("SELECT * FROM archive INNER JOIN products ON archive.product_id=products.id WHERE user_email = ?");
-	$sql->execute(array($_SESSION['user']));
-	$is_user_have_archive = $sql->fetchAll();
+	$link = connect_to_database();
+	$sql = "SELECT * FROM archive INNER JOIN products ON archive.product_id=products.id WHERE user_email = ?";
+	if($stmt = mysqli_prepare($link, $sql)){
+		mysqli_stmt_bind_param($stmt,'s', $_SESSION['user']);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+		$is_user_have_archive = mysqli_fetch_all($result, MYSQLI_ASSOC);
+		mysqli_stmt_close($stmt);
+	} else{
+		echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+	}
 	if(count($is_user_have_archive) != 0)
 	{
 		$items = "";
@@ -145,10 +159,17 @@ function generate_archive()
 
 function generate_orders()
 {
-	$pdo = connect_to_database();
-	$sql = $pdo->prepare("SELECT * FROM orders WHERE user_email = ?");
-	$sql->execute(array($_SESSION['user']));
-	$orders_count = $sql->fetchAll();
+	$link = connect_to_database();
+	$sql = "SELECT * FROM orders WHERE user_email = ?";
+	if($stmt = mysqli_prepare($link, $sql)){
+		mysqli_stmt_bind_param($stmt,'s', $_SESSION['user']);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+		$orders_count = mysqli_fetch_all($result, MYSQLI_ASSOC);
+		mysqli_stmt_close($stmt);
+	} else{
+		echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
+	}
 	if (count($orders_count) == 0)
 		return ("<p>У вас еще не быо заказов</p>");
 	else
@@ -167,14 +188,22 @@ function generate_orders()
 
 function generate_orders_to_admin()
 {
-	$pdo = connect_to_database();
-	$sgl = $pdo->prepare("SELECT id FROM orders");
-	$sgl->execute();
-	$orders = $sgl->fetchAll();
+	$link = connect_to_database();
+	$sql = "SELECT * FROM orders";
+	if($result = mysqli_query($link, $sql)){
+		$orders = mysqli_fetch_all($result, MYSQLI_ASSOC) ;
+		mysqli_free_result($result);
+	}
+	else
+		echo "No records matching your query were found.";
 
-	$sgl = $pdo->prepare("SELECT * FROM orders INNER JOIN order_positions ON orders.id=order_positions.order_id INNER JOIN products ON order_positions.product_id=products.id");
-	$sgl->execute();
-	$result = $sgl->fetchAll();
+	$sql = "SELECT * FROM orders INNER JOIN order_positions ON orders.id=order_positions.order_id INNER JOIN products ON order_positions.product_id=products.id";
+	if($res = mysqli_query($link, $sql)){
+		$result = mysqli_fetch_all($res, MYSQLI_ASSOC) ;
+		mysqli_free_result($res);
+	}
+	else
+		echo "No records matching your query were found.";
 	$return = "";
 	foreach ($orders as $order)
 	{
@@ -184,7 +213,8 @@ function generate_orders_to_admin()
 		$i = 0;
 		$total = 0;
 		$rows = "";
-		while (isset($result[$i]) && $result[$i]['order_id'] != $id)
+
+		while ($i < count($result) && isset($result[$i]) && $result[$i]['order_id'] != $id)
 			$i++;
 		while (isset($result[$i]) && $result[$i]['order_id'] == $id)
 		{
