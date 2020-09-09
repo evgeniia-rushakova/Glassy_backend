@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link href="../views/css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="../views/css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <title>Глейси</title>
+</head>
+<body>
+<div class="container">
+    <header class="main-header">
+        <div class="navigation-wrapper">
+            <a class="main-header-logo" href="https://evgeniia-rushakova.github.io/Glassy_frontend/">
+                <img src="img/header-logo.svg" alt="Логотип магазина" width="154" height="64">
+            </a>
+            <nav class="main-navigation inner">
+                <ul class="site-navigation">
+                    <li class="active catalog-navigation-item-inner current-page">
+                        <a href="#">Каталог</a>
+                        <ul class="catalog-navigation">
+                            <li class="catalog-navigation-item-submenu"><a href="https://evgeniia-rushakova.github.io/Glassy_frontend/inner.html">Все виды</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="https://evgeniia-rushakova.github.io/Glassy_frontend/inner.html">Сливочное</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="https://evgeniia-rushakova.github.io/Glassy_frontend/inner.html">Шоколадные</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="https://evgeniia-rushakova.github.io/Glassy_frontend/inner.html">Мятные</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="https://evgeniia-rushakova.github.io/Glassy_frontend/inner.html">Фруктовые</a></li>
+                        </ul>
+                    </li>
+                    <li class="catalog-navigation-item-inner"><a href="#">Доставка и оплата</a></li>
+                    <li class="catalog-navigation-item-inner"><a href="#">О Компании</a></li>
+                    <li class="active catalog-navigation-item-inner current-page">
+                        <a href="admin.php">ADMIN</a>
+                        <ul class="catalog-navigation">
+                            <li class="catalog-navigation-item-submenu"><a href="admin.html">Заказы</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="add_new_item.html">Добавить товар</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="change_item.html">Редактировать каталог</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="users.html">Пользователи</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="user-navigation-general">
+                <ul class="user-navigation inner-user-navigation">
+                    <li class="user-navigation-item search-hover">
+                        <a class="search-link" href="#" aria-label="Поиск"></a>
+                        <section class="modal-search">
+                            <h3 class="visually-hidden">Поиск</h3>
+                            <form class="search-on-site" action="#" method="get">
+                                <label class="visually-hidden" for="find">Введите сюда искомую информацию</label>
+                                <input class="placeholder input-style" type="search" placeholder="Что ищем?" name="find" id="find">
+                                <button class="visually-hidden" type="submit">Искать</button>
+                            </form>
+                        </section>
+                    </li>
+                    <li class="user-navigation-item login-hover"><a class="login-link" href="server/logout.php">Выход</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="information-breadcrumbs">
+            <p class="contacts-information" aria-label="Часы работы и телефон"><span>С 10 до 20, ежедневно</span><a href=”tel:8-812-450-25-25″>8 812 450-25-25</a></p>
+        </div>
+    </header>
+    <div style="margin-top:50px; margin-bottom: 50px;">
+        <h3 class="page-title" style="margin-bottom: 30px;">Загрузить новый товар</h3>
+        <form enctype="multipart/form-data" action="../server/load_image.php" method="POST">
+            <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+            <input type="hidden" name="file" value="{file}">
+            <input name="userfile" type="file" />
+            <input type="submit" class="button button-visual" style="min-width: 120px; min-height: 45px;" value="Загрузить файл" />
+        </form>
+        <div class="info-wrapper" style="display: flex;justify-content: space-between; flex-direction: row;">
+            <div style="width: 350px;height: 350px;">
+                <img src="img/mentol.jpg" alt="name" style="border-radius: 50%; max-width: 300px; height: auto;">
+            </div>
+            <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                <form action="../server/add_new_item.php" method="post" style="display: flex;flex-direction: column;justify-content: space-between;">
+                    <label class="contacts-information" style="font-size: 25px;margin-bottom: 15px;margin-top: 15px;" for="nm">Название</label>
+                    <input type="hidden" name="photo" value="1590159068158310644.jpg">
+                    <input type="text" name="name_inp" required style="border: none;
+            color: white;
+            background-color: rgba(255, 255, 255, .4);
+            border-radius: 10px;
+            padding: 5px;" id="nm">
+                    <label class="contacts-information" for="st" style="font-size: 25px;margin-bottom: 15px;margin-top: 15px;">Тип:</label>
+                    <select class="sorting-select" name="type" id="st" required>
+                        <option value="cream">сливочное</option>
+                        <option value="choco">шоколадное</option>
+                        <option value="fruit">фруктовое</option>
+                        <option value="mint">мятное</option>
+                    </select>
+                    <label class="contacts-information" style="font-size: 25px;margin-bottom: 15px;margin-top: 15px;" for="ft">Жирность: (%)</label>
+                    <input type="number" name="fat" required style="border: none;
+            color: white;
+            background-color: rgba(255, 255, 255, .4);
+            border-radius: 10px;
+            padding: 5px; margin-bottom: 15px;" id="ft">
+                    <label class="contacts-information" style="font-size: 25px;margin-bottom: 15px;" for="pr">Цена за килограмм: (&#8381;/кг)</label>
+                    <input type="number" required name="price" style="border: none;
+            color: white;
+            background-color: rgba(255, 255, 255, .4);
+            border-radius: 10px;
+            padding: 5px; margin-bottom: 15px;" id="pr">
+                    <p class="contacts-information" style="font-size: 20px;
+            line-height: 23px;
+    padding-left: 80px;
+    font-weight: normal;
+text-align: right">
+                        <button type="submit" class="button button-visual" style="min-width: 120px;
+    min-height: 45px;">Загрузить новый продукт</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-social">
+            <ul>
+                <li class="twitter-social" tabindex="0" aria-label="наша страница в твиттере"><a class="social-link" href="#"></a></li>
+                <li class="instagram-social" tabindex="0" aria-label="наша страница в инстаграмм"><a class="social-link" href="#"></a></li>
+                <li class="facebook-social" tabindex="0" aria-label="наша страница в фэйсбук"><a class="social-link" href="#" ></a></li>
+                <li class="vkontakte-social" tabindex="0" aria-label="наша страница в вконтакте"><a class="social-link" href="#"></a></li>
+            </ul>
+        </div>
+        <section class="commercial-information">
+            <h2 class="visually-hidden"> Коммерческая информация </h2>
+            <ul class="commercial-column">
+                <li class="commercial-block-item"><a href="forproviders.html">Для поставщиков</a></li>
+                <li class="commercial-block-item"><a href="documents.html">Наши документы</a></li>
+                <li class="commercial-block-item"><a href="production.html">О производстве</a></li>
+                <li class="commercial-block-item"><a href="ecology.html">Экологические стандарты</a></li>
+            </ul>
+        </section>
+        <div class="copyright">
+            <img src="../views/img/header-logo.svg" alt="Логотип магазина" width="154" height="64">
+        </div>
+    </footer>
+</div>
+</div>
+<div class="overlay"></div>
+<section class="modal-reg">
+    <div class="modal-top-wrapper">
+        <h2 style="padding-left: 28px;">Регистрация</h2>
+        <a href="#" class="modal-close close-reg"></a>
+    </div>
+    <form class="feedback-form" action="server/register.php" method="post">
+        <p class="feedback-item">
+            <label><span class="visually-hidden">Ваш e-mail</span>
+                <input  class="placeholder input-feedback" type="email" name="email" placeholder="Ваш e-mail">
+            </label>
+        </p>
+        <p class="feedback-item">
+            <label><span class="visually-hidden">Ваш пароль</span>
+                <input  class="placeholder input-feedback" type="password" name="pass" placeholder="Ваш пароль" minlength="6">
+            </label>
+        </p>
+        <button class="button feedback-button" type="submit">Отправить</button>
+    </form>
+</section>
+<script src="views/js/main.js"></script>
+</body>
+</html>

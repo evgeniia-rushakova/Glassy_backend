@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link href="../views/css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="../views/css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <title>Глейси</title>
+</head>
+<body>
+<div class="container">
+    <header class="main-header">
+        <div class="navigation-wrapper">
+            <a class="main-header-logo" href="https://evgeniia-rushakova.github.io/Glassy_frontend/">
+                <img src="img/header-logo.svg" alt="Логотип магазина" width="154" height="64">
+            </a>
+            <nav class="main-navigation inner">
+                <ul class="site-navigation">
+                    <li class="active catalog-navigation-item-inner current-page">
+                        <a href="#">Каталог</a>
+                        <ul class="catalog-navigation">
+                            <li class="catalog-navigation-item-submenu"><a href="https://evgeniia-rushakova.github.io/Glassy_frontend/inner.html">Все виды</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="https://evgeniia-rushakova.github.io/Glassy_frontend/inner.html">Сливочное</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="https://evgeniia-rushakova.github.io/Glassy_frontend/inner.html">Шоколадные</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="https://evgeniia-rushakova.github.io/Glassy_frontend/inner.html">Мятные</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="https://evgeniia-rushakova.github.io/Glassy_frontend/inner.html">Фруктовые</a></li>
+                        </ul>
+                    </li>
+                    <li class="catalog-navigation-item-inner"><a href="#">Доставка и оплата</a></li>
+                    <li class="catalog-navigation-item-inner"><a href="#">О Компании</a></li>
+                    <li class="active catalog-navigation-item-inner current-page">
+                        <a href="admin.php">ADMIN</a>
+                        <ul class="catalog-navigation">
+                            <li class="catalog-navigation-item-submenu"><a href="admin.html">Заказы</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="add_new_item.html">Добавить товар</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="change_item.html">Редактировать каталог</a></li>
+                            <li class="catalog-navigation-item-submenu"><a href="users.html">Пользователи</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="user-navigation-general">
+                <ul class="user-navigation inner-user-navigation">
+                    <li class="user-navigation-item search-hover">
+                        <a class="search-link" href="#" aria-label="Поиск"></a>
+                        <section class="modal-search">
+                            <h3 class="visually-hidden">Поиск</h3>
+                            <form class="search-on-site" action="#" method="get">
+                                <label class="visually-hidden" for="find">Введите сюда искомую информацию</label>
+                                <input class="placeholder input-style" type="search" placeholder="Что ищем?" name="find" id="find">
+                                <button class="visually-hidden" type="submit">Искать</button>
+                            </form>
+                        </section>
+                    </li>
+                    <li class="user-navigation-item login-hover"><a class="login-link" href="server/logout.php">Выход</a></li>
+                    <li class="user-navigation-item bucket-hover bucket-full">
+                        <a class="bucket-link" href="Bucket.html">Всего: 2</a>
+                        <section class="modal-bucket">
+                            <h4 class="visually-hidden">bucket</h4>
+                            <table class="client-choise">
+                                <tr class="client-choise-row">
+                                    <td class="delete"><a href="../server/delete_from_cart.php?id=12"><img src="img/delete.svg" alt="удалить из заказа" width="11" height="11"></a></td>
+                                    <td><img src="img/mintsirup.jpg" width="33" height="33" alt="Сливочное с мятным сиропом"></td>
+                                    <td><a class="icecream-link" href="../catalog_item.php?id=12" style=>Сливочное с мятным сиропом</a></td>
+                                    <td>
+                                        <p style=>1 х <span style=>420 руб/кг.</span></p>
+                                    </td>
+                                    <td>
+                                        <p style=>420 руб</p>
+                                    </td>
+                                </tr><tr class="client-choise-row">
+                                <td class="delete"><a href="../server/delete_from_cart.php?id=10"><img src="img/delete.svg" alt="удалить из заказа" width="11" height="11"></a></td>
+                                <td><img src="img/mentol.jpg" width="33" height="33" alt="Сливочное с ментоловым сиропом"></td>
+                                <td><a class="icecream-link" href="../catalog_item.php?id=10" style=>Сливочное с ментоловым сиропом</a></td>
+                                <td>
+                                    <p style=>1 х <span style=>355 руб/кг.</span></p>
+                                </td>
+                                <td>
+                                    <p style=>355 руб</p>
+                                </td>
+                            </tr>
+
+                                <tr class="client-choise-row-amount">
+                                    <td colspan="5">Итого: 775 руб.</td>
+                                </tr>
+                            </table>
+                            <a class="button button-choise" href="cart.php">Перейти к оформлению</a>
+                        </section>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="information-breadcrumbs">
+            <p class="contacts-information" aria-label="Часы работы и телефон"><span>С 10 до 20, ежедневно</span><a href=”tel:8-812-450-25-25″>8 812 450-25-25</a></p>
+        </div>
+    </header>
+
+    <div class="cart">
+        <div style="margin: 10px; position: fixed; top: 0; right: 0;">
+            <form action="../server/delete_user.php?email=dog@dog" method="post">
+                <button type="submit" class="button button-chocolate">Удалить меня</button>
+            </form></div>
+        <h2 class="cart-titleh2">Ваши заказы:</h2>
+        <div>
+            <div style='margin: 10px;border: 1px dashed white;border-radius: 10px; max-width: 80%'><p style='margin-left: 10px;'>Номер заказа: <b>509</b></p><p style='margin-left: 10px;'>Статус заказа: <b>Принят в обработку</b></p></div>
+        </div>
+        <h2 class="cart-titleh2">Ваша корзина:</h2>
+        <div class="cart-archive">
+            <h3 class="cart-titleh3">В архиве: </h3>
+            <table class="client-choise client-choise-cart">
+                <tr class="client-choise-row">
+                    <td class="delete"><a href="../server/archive.php?act=delitem&id=4"><img src="img/delete.svg" alt="удалить из заказа" width="11" height="11"></a></td>
+                    <td><img src="img/creme-brulee.jpg" width="33" height="33" alt="Сливочное крем-брюле с карамельной подливкой"></td>
+                    <td><a class="icecream-link" href="../catalog_item.php?id=4" style=color:white;>Сливочное крем-брюле с карамельной подливкой</a></td>
+                    <td>
+                        <p style=color:white;>1.000 х <span style=color:white;>325 руб/кг.</span></p>
+                    </td>
+                    <td>
+                        <p style=color:white;>325 руб</p>
+                    </td>
+                </tr><tr class="client-choise-row">
+                <td class="delete"><a href="../server/archive.php?act=delitem&id=5"><img src="img/delete.svg" alt="удалить из заказа" width="11" height="11"></a></td>
+                <td><img src="img/cowberry.jpg" width="33" height="33" alt="Сливочное с брусничным джемом"></td>
+                <td><a class="icecream-link" href="../catalog_item.php?id=5" style=color:white;>Сливочное с брусничным джемом</a></td>
+                <td>
+                    <p style=color:white;>0.000 х <span style=color:white;>410 руб/кг.</span></p>
+                </td>
+                <td>
+                    <p style=color:white;>0 руб</p>
+                </td>
+            </tr><tr class="client-choise-row">
+                <td class="delete"><a href="../server/archive.php?act=delitem&id=2"><img src="img/delete.svg" alt="удалить из заказа" width="11" height="11"></a></td>
+                <td><img src="img/coffee.jpg" width="33" height="33" alt="Сливочно-кофейное с кусочками шоколада"></td>
+                <td><a class="icecream-link" href="../catalog_item.php?id=2" style=color:white;>Сливочно-кофейное с кусочками шоколада</a></td>
+                <td>
+                    <p style=color:white;>1.000 х <span style=color:white;>355 руб/кг.</span></p>
+                </td>
+                <td>
+                    <p style=color:white;>355 руб</p>
+                </td>
+            </tr><tr class="client-choise-row">
+                <td class="delete"><a href="../server/archive.php?act=delitem&id=1"><img src="img/delete.svg" alt="удалить из заказа" width="11" height="11"></a></td>
+                <td><img src="img/orange.jpg" width="33" height="33" alt="Сливочое с апельсиновым джемом и цитрусовой стружкой"></td>
+                <td><a class="icecream-link" href="../catalog_item.php?id=1" style=color:white;>Сливочое с апельсиновым джемом и цитрусовой стружкой</a></td>
+                <td>
+                    <p style=color:white;>1.000 х <span style=color:white;>380 руб/кг.</span></p>
+                </td>
+                <td>
+                    <p style=color:white;>380 руб</p>
+                </td>
+            </tr>
+                <tr class="client-choise-row-amount">
+                    <td colspan="5" style='color: white;'>Итого: 1060 руб.</td>
+                </tr>
+            </table>
+            <div class="buttons">
+                <a href="../server/archive.php?act=add" class="button button-chocolate">Добавить в текущий заказ</a>
+                <a href="../server/archive.php?act=clean" class="button button-chocolate">Очистить архив</a></div>
+        </div>
+        <h3 class="cart-titleh3">Текущий заказ</h3>
+        <table class="client-choise client-choise-cart">
+            <tr class="client-choise-row">
+                <td class="delete"><a href="../server/delete_from_cart.php?id=12"><img src="img/delete.svg" alt="удалить из заказа" width="11" height="11"></a></td>
+                <td><img src="img/mintsirup.jpg" width="33" height="33" alt="Сливочное с мятным сиропом"></td>
+                <td><a class="icecream-link" href="../catalog_item.php?id=12" style=color:white;>Сливочное с мятным сиропом</a></td>
+                <td>
+                    <p style=color:white;>1 х <span style=color:white;>420 руб/кг.</span></p>
+                </td>
+                <td>
+                    <p style=color:white;>420 руб</p>
+                </td>
+            </tr><tr class="client-choise-row">
+            <td class="delete"><a href="../server/delete_from_cart.php?id=10"><img src="img/delete.svg" alt="удалить из заказа" width="11" height="11"></a></td>
+            <td><img src="img/mentol.jpg" width="33" height="33" alt="Сливочное с ментоловым сиропом"></td>
+            <td><a class="icecream-link" href="../catalog_item.php?id=10" style=color:white;>Сливочное с ментоловым сиропом</a></td>
+            <td>
+                <p style=color:white;>1 х <span style=color:white;>355 руб/кг.</span></p>
+            </td>
+            <td>
+                <p style=color:white;>355 руб</p>
+            </td>
+        </tr>
+
+            <tr class="client-choise-row-amount">
+                <td colspan="5" style='color: white;'>Итого: 775 руб.</td>
+            </tr>
+        </table>
+        <div class="buttons">
+            <a href="../server/archive.php?act=archive" class="button button-chocolate">Архивировать заказ</a>
+            <a href="../server/delete_from_cart.php?act=delete" class="button button-chocolate">Очистить корзину</a>
+            <a href="../server/delete_from_cart.php?act=buy" class="button button-chocolate">Оплатить и заказать</a>
+        </div>
+
+    </div>
+    <footer class="main-footer">
+        <div class="footer-social">
+            <ul>
+                <li class="twitter-social" tabindex="0" aria-label="наша страница в твиттере"><a class="social-link" href="#"></a></li>
+                <li class="instagram-social" tabindex="0" aria-label="наша страница в инстаграмм"><a class="social-link" href="#"></a></li>
+                <li class="facebook-social" tabindex="0" aria-label="наша страница в фэйсбук"><a class="social-link" href="#" ></a></li>
+                <li class="vkontakte-social" tabindex="0" aria-label="наша страница в вконтакте"><a class="social-link" href="#"></a></li>
+            </ul>
+        </div>
+        <section class="commercial-information">
+            <h2 class="visually-hidden"> Коммерческая информация </h2>
+            <ul class="commercial-column">
+                <li class="commercial-block-item"><a href="forproviders.html">Для поставщиков</a></li>
+                <li class="commercial-block-item"><a href="documents.html">Наши документы</a></li>
+                <li class="commercial-block-item"><a href="production.html">О производстве</a></li>
+                <li class="commercial-block-item"><a href="ecology.html">Экологические стандарты</a></li>
+            </ul>
+        </section>
+        <div class="copyright">
+            <img src="img/header-logo.svg" alt="Логотип магазина" width="154" height="64">
+        </div>
+    </footer>
+</div>
+</div>
+<div class="overlay"></div>
+<section class="modal-reg">
+    <div class="modal-top-wrapper">
+        <h2 style="padding-left: 28px;">Регистрация</h2>
+        <a href="#" class="modal-close close-reg"></a>
+    </div>
+    <form class="feedback-form" action="server/register.php" method="post">
+        <p class="feedback-item">
+            <label><span class="visually-hidden">Ваш e-mail</span>
+                <input  class="placeholder input-feedback" type="email" name="email" placeholder="Ваш e-mail">
+            </label>
+        </p>
+        <p class="feedback-item">
+            <label><span class="visually-hidden">Ваш пароль</span>
+                <input  class="placeholder input-feedback" type="password" name="pass" placeholder="Ваш пароль" minlength="6">
+            </label>
+        </p>
+        <button class="button feedback-button" type="submit">Отправить</button>
+    </form>
+</section>
+<script src="views/js/main.js"></script>
+</body>
+</html>

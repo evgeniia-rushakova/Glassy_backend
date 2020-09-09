@@ -2,103 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b504ed6-b24c-40a0-8aaf-f627949a13d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/.idea/glassy.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/admin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/catalog.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/catalog_item.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/config/connect.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/config/database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/config/products.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/config/setup.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/server/add_to_cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/server/archive.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/server/delete_from_cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/server/generate_cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/server/generate_info_to admin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/server/generate_products.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/server/login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/server/logout.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/server/register.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/subject" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/admin_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/bucket_full.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/cart_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/catalog_item_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/catalog_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/css/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/css/normalize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/footer_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/header_inner_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/header_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/background-subscribe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/blogphoto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/blueberry.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/border-candy.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/bucket-full.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/bucket-hover.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/bucket.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/candy-border-mini.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/checkbox-on.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/chocolate-promo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/chocopieces.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/chocoshavings.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/close.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/coffee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/cow-features.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/cowberry.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/creme-brulee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/delete.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/enter-hover.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/entrance.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/facebook.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/first-slide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/header-logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/hit.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/icecream-logo-features.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/icecream-map.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/icon-down-dir.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/icon-down-dir2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/instagram.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/leaf.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/lemon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/logo-htmlacademy-small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/logo-htmlacademy-small.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/logo-name.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/love.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/mentol.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/mintsirup.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/orange.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/raspberry-promo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/search-hover.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/search.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/second-slide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/strawberry.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/temperature-features.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/third-slide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/twitter.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/vanilla-chocolate.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/vk.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/img/waffle.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/in-out_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/index_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/item_in_cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/item_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/js/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/order_in_admis_page_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/products-item_tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/furry-pancake-glassy/views/row_in_order_tpl.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/change_item.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/host1.localhost.7z" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +24,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/furry-pancake-glassy" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
@@ -125,16 +33,19 @@
     </servers>
   </component>
   <component name="ProjectId" id="1br5hjlZI158JWe5402KTLu0xp9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -143,12 +54,13 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\janev\Desktop\untitled" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\web\www\host1.localhost\views" />
       <recent name="D:\web\www\host1.localhost" />
+      <recent name="C:\Users\janev\Desktop\untitled" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Program Files\JetBrains\WebStorm 2020.1\jbr\bin\D\git\Glassy_backend\docs" />
       <recent name="C:\Users\janev\Desktop\untitled" />
     </key>
   </component>
@@ -177,6 +89,7 @@
       <workItem from="1590319904415" duration="14037000" />
       <workItem from="1591442513463" duration="23056000" />
       <workItem from="1591467326635" duration="5510000" />
+      <workItem from="1599662022171" duration="4201000" />
     </task>
     <servers />
   </component>
@@ -184,22 +97,6 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="441" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589380704041">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="441" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589380704041" />
-    <state x="727" y="407" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589382338012">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="727" y="407" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589382338012" />
-    <state x="717" y="284" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589547002315">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="717" y="284" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589547002315" />
-    <state x="767" y="292" key="FileChooserDialogImpl" timestamp="1589551390789">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="767" y="292" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589551390789" />
     <state width="1877" height="479" key="GridCell.Tab.0.bottom" timestamp="1591472330330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -248,47 +145,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="479" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591472330331" />
-    <state x="803" y="352" key="NewPhpClassDialog" timestamp="1589387750955">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="803" y="352" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589387750955" />
     <state x="796" y="528" key="NewPhpFileDialog" timestamp="1591470988313">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="796" y="528" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591470988313" />
-    <state x="817" y="317" key="PhpDebugProjectChooserDialog" timestamp="1589383119073">
+    <state x="972" y="65" width="607" height="885" key="find.popup" timestamp="1599676055810">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="817" y="317" key="PhpDebugProjectChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589383119073" />
-    <state x="972" y="65" width="607" height="885" key="find.popup" timestamp="1591471813745">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="972" y="65" width="607" height="885" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591471813745" />
-    <state x="695" y="361" width="672" height="678" key="search.everywhere.popup" timestamp="1590325648685">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="695" y="361" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590325648685" />
+    <state x="972" y="65" width="607" height="885" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599676055810" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/catalog_item.php</url>
-          <line>15</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/server/archive.php</url>
-          <line>26</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/server/delete_user.php</url>
-          <line>24</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="add_to_cart.php">
         <watch expression="$_SESSION" />
